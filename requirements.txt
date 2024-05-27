@@ -27,5 +27,6 @@ transformers>=4.35.2
 transformers_stream_generator
 uvicorn
 yacs
+oneccl_bind_pt
 deepspeed
 intel-extension-for-transformers
