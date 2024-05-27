@@ -30,4 +30,4 @@ with col1:
     input = st.text_input('text input', 'Ask Me Anything', key='word_seg_input')
 
 with col2:
-    input2 = st.text_input('text output', placeholder=response(question), disabled=True)
+    input2 = st.text_input('text output', placeholder=response(input), disabled=True)
