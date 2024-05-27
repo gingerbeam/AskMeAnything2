@@ -3,7 +3,7 @@ import streamlit as st
 from intel_extension_for_transformers.neural_chat import PipelineConfig
 from intel_extension_for_transformers.neural_chat import build_chatbot
 from intel_extension_for_transformers.neural_chat import plugins
-from intel_extension_for_transformers.transformers import RtnConfig
+# from intel_extension_for_transformers.transformers import RtnConfig
 
 plugins.retrieval.enable=True
 plugins.retrieval.args['embedding_model'] = "ZhipuAI/chatglm3-6b"
@@ -13,10 +13,11 @@ plugins.retrieval.args['search_type'] = "similarity_score_threshold"
 plugins.retrieval.args['append'] = False
 plugins.retrieval.args['search_kwargs'] = {"score_threshold": 0.8, k: 1}
 
-config = PipelineConfig(model_name_or_path='AI-ModelScope/bge-base-zh-v1.5',
-plugins=plugins,
-optimization_config=RtnConfig(compute_dtype="int8",
-weight_dtype="int4_fullrange"))
+# config = PipelineConfig(model_name_or_path='AI-ModelScope/bge-base-zh-v1.5',
+# plugins=plugins,
+# optimization_config=RtnConfig(compute_dtype="int8",
+# weight_dtype="int4_fullrange"))
+config = PipelineConfig(model_name_or_path='AI-ModelScope/bge-base-zh-v1.5', plugins=plugins)
 print("Config finish!")
 
 chatbot = build_chatbot(config)
