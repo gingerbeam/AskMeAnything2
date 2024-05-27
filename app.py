@@ -9,9 +9,6 @@ plugins.retrieval.enable=True
 plugins.retrieval.args['embedding_model'] = "ZhipuAI/chatglm3-6b"
 plugins.retrieval.args['process'] = False
 plugins.retrieval.args["input_path"]="./mental_health.txt"
-plugins.retrieval.args['search_type'] = "similarity_score_threshold"
-plugins.retrieval.args['append'] = False
-plugins.retrieval.args['search_kwargs'] = {"score_threshold": 0.8, k: 1}
 
 # config = PipelineConfig(model_name_or_path='AI-ModelScope/bge-base-zh-v1.5',
 # plugins=plugins,
