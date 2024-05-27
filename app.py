@@ -15,7 +15,6 @@ optimization_config=RtnConfig(compute_dtype="int8",
 weight_dtype="int4_fullrange"))
 print("Config finish!")
 
-@st.experimental_singleton
 chatbot = build_chatbot(config)
 print("Chatbot init!")
 
