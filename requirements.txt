@@ -28,5 +28,6 @@ transformers>=4.35.2
 transformers_stream_generator
 uvicorn
 yacs
-oneccl_bind_pt -extra-index-url https://pytorch-extension.intel.com/release-whl/stable/cpu/us/
+oneccl_bind_pt
 intel-extension-for-transformers
+--extra-index-url https://pytorch-extension.intel.com/release-whl/stable/cpu/us/
