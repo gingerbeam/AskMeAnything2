@@ -27,4 +27,5 @@ transformers>=4.35.2
 transformers_stream_generator
 uvicorn
 yacs
+deepspeed
 intel-extension-for-transformers
