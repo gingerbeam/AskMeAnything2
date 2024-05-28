@@ -51,7 +51,9 @@ text_input = st.text_input(
 )
 
 if text_input:
-    st.write("You entered: ", response(text_input))
+    answer = response(text_input)
+    print(answer)
+    st.write("You entered: ", answer)
 
 # col1, col2 = st.columns(2)
 # with col1:
