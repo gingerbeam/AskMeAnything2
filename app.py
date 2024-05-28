@@ -38,9 +38,25 @@ def response(question):
     return answer
 
 # if __name__ == '__main__':
-col1, col2 = st.columns(2)
-with col1:
-    input = st.text_input('text input', 'Ask Me Anything', key='word_seg_input')
 
-with col2:
-    input2 = st.text_input('text output', placeholder=response(input), disabled=True)
+if "visibility" not in st.session_state:
+    st.session_state.visibility = "visible"
+    st.session_state.disabled = False
+
+text_input = st.text_input(
+    "Ask Me Anything 👇",
+    label_visibility=st.session_state.visibility,
+    disabled=st.session_state.disabled,
+    placeholder=st.session_state.placeholder,
+)
+
+if text_input:
+    st.write("You entered: ", response(text_input))
+
+# col1, col2 = st.columns(2)
+# with col1:
+#     input = st.text_input('text input', 'Ask Me Anything', key='word_seg_input')
+
+# with col2:
+#     st.write("The current movie title is", title)
+    # input2 = st.text_input('text output', placeholder=response(input), disabled=True)
