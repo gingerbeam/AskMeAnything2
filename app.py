@@ -10,7 +10,7 @@ from modelscope import snapshot_download
 embedding_model_dir = snapshot_download('AI-ModelScope/bge-base-zh-v1.5')
 llm_dir = snapshot_download('ZhipuAI/chatglm3-6b')
 
-@st.experimental_singleton
+@st.cache_resource
 def init():
     plugins.retrieval.enable=True
     plugins.retrieval.args['embedding_model'] = embedding_model_dir
