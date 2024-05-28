@@ -47,7 +47,7 @@ text_input = st.text_input(
     "Ask Me Anything 👇",
     label_visibility=st.session_state.visibility,
     disabled=st.session_state.disabled,
-    placeholder=st.session_state.placeholder,
+    # placeholder=st.session_state.placeholder,
 )
 
 if text_input:
