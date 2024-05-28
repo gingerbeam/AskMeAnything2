@@ -15,7 +15,7 @@ def init():
     plugins.retrieval.enable=True
     plugins.retrieval.args['embedding_model'] = embedding_model_dir
     # plugins.retrieval.args['embedding_model'] = "AI-ModelScope/bge-base-zh-v1.5"
-    plugins.retrieval.args['process'] = False
+    # plugins.retrieval.args['process'] = False
     plugins.retrieval.args["input_path"]="./mental_health.txt"
 
     # config = PipelineConfig(model_name_or_path=llm_dir,
@@ -33,6 +33,7 @@ def init():
 cb = init()
 
 def response(question):
+    print(question)
     answer = cb.predict(query=question)
     print('infer finished!')
     return answer
@@ -51,6 +52,7 @@ text_input = st.text_input(
 )
 
 if text_input:
+    print(text_input)
     answer = response(text_input)
     print(answer)
     st.write("You entered: ", answer)
